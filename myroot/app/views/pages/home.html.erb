@@ -1,8 +1,36 @@
-<h1>Landing page for the application</h1>
-<p>
-		This is where the nice photograph will be.
-</p>
-<p>
-		<%= link_to "Sign up now!", "#" %>
-</p>
+<% if user_signed_in? %>
+	<h2> Welcome back :) </h2>
+<% else %>
 
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"> <%= link_to 'Image', "https://docs.google.com/file/d/0B12oHQsyVW3SVElGOGFWYUlvOWs/edit" %></div>
+    <div class="item">…</div>
+    <div class="item">…</div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+<div class="hero-unit">
+    <p> <%= link_to 'Sign up now!',  new_user_registration_path , class: "btn btn-large btn-primary" %> </p>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10">
+      Content
+    </div>
+    <div class="span2">
+      Categories list
+    </div>
+  </div>
+ </div>
+<% end %>
